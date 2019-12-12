@@ -1,6 +1,8 @@
 # Blazor Scaffolded Identity
 Scaffolded Blazor App with fixed Logout
 
+>IF USING THIS REPO DELETE TEST USER - user@user.com 
+
 
 1. dotnet new blazorserver --auth Individual
 2. create new user for testing ( user@user.com / Pass12345! )
@@ -12,19 +14,21 @@ Scaffolded Blazor App with fixed Logout
 8. logout from blazor - not working
 9. using instructions from ScaffoldingReadMe.txt
 10. logout from blazor - not working
+
 #### NOTE:
 1. if user go to https://localhost:5001/Identity/Account/Manage ,  then from _MangeNav.cshtml can succesfuly LogOut from app.
 
 #### WORKAROUND:
 - delete files in areas/pages/account "LogOut.cshtml" and "LogOut.cshtml.cs", and create new file that is like the one before scaffold ( "LogOut.cshtml" )
-@page
-@using Microsoft.AspNetCore.Identity
-@attribute [IgnoreAntiforgeryToken]
-@inject SignInManager<IdentityUser> SignInManager
-@functions {
-    public async Task<IActionResult> OnPost()
-    {
-        if (SignInManager.IsSignedIn(User)){await SignInManager.SignOutAsync();}
-        return Redirect("~/");
-    }
-}
+
+            @page
+            @using Microsoft.AspNetCore.Identity
+            @attribute [IgnoreAntiforgeryToken]
+            @inject SignInManager<IdentityUser> SignInManager
+            @functions {
+                public async Task<IActionResult> OnPost()
+                {
+                    if (SignInManager.IsSignedIn(User)){await SignInManager.SignOutAsync();}
+                    return Redirect("~/");
+                }
+            }

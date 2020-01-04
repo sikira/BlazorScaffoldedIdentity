@@ -20,7 +20,7 @@ Scaffolded Blazor App with fixed Logout
 
 
 #### WORKAROUND NUM 1:
-    Add [IgnoreAntiforgeryToken] in "LogOut.cshtml.cs" file
+- Add [IgnoreAntiforgeryToken] in "LogOut.cshtml.cs" file
 
 #### WORKAROUND NUM 2:
 - delete files in areas/pages/account "LogOut.cshtml" and "LogOut.cshtml.cs", and create new file that is like the one before scaffold ( "LogOut.cshtml" )

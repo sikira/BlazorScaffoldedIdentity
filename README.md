@@ -18,7 +18,11 @@ Scaffolded Blazor App with fixed Logout
 #### NOTE:
 1. if user go to https://localhost:5001/Identity/Account/Manage ,  then from _MangeNav.cshtml can succesfuly LogOut from app.
 
-#### WORKAROUND:
+
+#### WORKAROUND NUM 1:
+- Add [IgnoreAntiforgeryToken] in "LogOut.cshtml.cs" file
+
+#### WORKAROUND NUM 2:
 - delete files in areas/pages/account "LogOut.cshtml" and "LogOut.cshtml.cs", and create new file that is like the one before scaffold ( "LogOut.cshtml" )
 
             @page
